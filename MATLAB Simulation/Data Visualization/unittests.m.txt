@@ -1,0 +1,14 @@
+%GRAPHICAL SIMULATION OF FIRST STATISTICS FILE
+% Author MD Naseem Ashraf
+
+%Alter FileWriter Path as per your setup
+fstat = csvread('C:\Users\Toshiba\Desktop\SIMMUNITY\Outputs\FirstStat.txt',0,0);
+
+%Alter FileWriter Path as per your setup
+kz = csvread('C:\Users\Toshiba\Desktop\SIMMUNITY\Outputs\FirstStat.txt',0,0);
+
+[m,n] = size(fstat);
+
+
+plot(fstat,'LineWidth',2);
+figure,bar(fstat);

@@ -1,0 +1,54 @@
+%MATLAB PROGRAM TO SIMULATE ANIMATION FOR SIMMUNITY CELLULAR AUTOMATA
+% Author MD Naseem Ashraf
+
+
+%Alter FileWriter Path as per your setup
+UniverseSize = csvread('C:\Users\Toshiba\Desktop\SIMMUNITY\Universes Collection\RandomUniverse.txt');
+
+k=0;
+r1 = 0;
+r2 = UniverseSize(1)-1;   %Take limit of row in matrix
+c1 = 0;
+c2 = UniverseSize(2)-1;   %Take limit of column in matrix
+loopx = UniverseSize(3);    %Count of number of steps to be stacked in 3D Matrix
+
+%PROCESS EACH ELEMENT OF SIMULATION DATA MATRIX
+for k = 1:loopx
+    k;
+	
+	%Alter FileWriter Path as per your setup
+    supermat(:,:,k) = csvread('C:\Users\Toshiba\Desktop\SIMMUNITY\Outputs\SimData.txt',r1,c1,[r1,c1,r2,c2]);    
+    [m,n] = size(supermat(:,:,1));
+    newmat = zeros(m,n,'uint8');
+
+    %REPLACE COLORS FOR CELLULAR CODES
+    for i = 1:1:m
+        for j = 1:1:n
+            if (supermat(i,j,k) == 0)   %Blood Plasma
+                newmat(i,j,1) = 128;
+                newmat(i,j,2) = 128;
+                newmat(i,j,3) = 128;             
+            elseif (supermat(i,j,k) == 1)   %RBC
+                newmat(i,j,1) = 255;
+                newmat(i,j,2) = 0;
+                newmat(i,j,3) = 0;             
+            elseif (supermat(i,j,k) == 2)   %Virus     
+                newmat(i,j,1) = 0;
+                newmat(i,j,2) = 0;
+                newmat(i,j,3) = 0;            
+            elseif (supermat(i,j,k) == 3)   %WBC   
+                newmat(i,j,1) = 255;
+                newmat(i,j,2) = 255;
+                newmat(i,j,3) = 255;                
+            end    
+        end
+    end
+
+  r1 = r1 + UniverseSize(1); 
+  r2 = r2 + UniverseSize(1);  
+    
+  imagesc(newmat);  %# Create a colored plot of the matrix values      
+  M(k) = getframe;  %#Save frame for animation
+end
+
+movie(M,1,1);
