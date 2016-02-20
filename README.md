@@ -10,6 +10,11 @@ a MATLAB program to produce a step by step animation.
 
 Note: Pathogen, [Phagocyte](https://en.wikipedia.org/wiki/Phagocyte), Virus, Infection are all used interchangibly from here onwards.
 
+## Aim
+This project showcases that the application of simple rules onto a universe with diverse random elements can yield interesting patterns that exhibit intelligent processes as a net result of each relationship rule. The project shows the fight of Virus (here Phagocytes) and White Blood Cells in the blood stream, where RBC is the primary source of food for Virus and there exists the water content or blood plasma in emty spaces of the universe.
+
+The universe is shown as a cellular matrix and the changes to the system by individual rule application is also represented as a graphical grid display in Matlab.
+
 ## Rules of Simmunity: A New Game of Life
 
     Regeneration Step:
@@ -35,11 +40,6 @@ Note: Pathogen, [Phagocyte](https://en.wikipedia.org/wiki/Phagocyte), Virus, Inf
 
     Natural Death Step:
     A RBC dies after a few iterations simulating natural death of RBCs.
-
-## Aim
-This project showcases that the application of simple rules onto a universe with diverse random elements can yield interesting patterns that exhibit intelligent processes as a net result of each relationship rule. The project shows the fight of Virus (here Phagocytes) and White Blood Cells in the blood stream, where RBC is the primary source of food for Virus and there exists the water content or blood plasma in emty spaces of the universe.
-
-The universe is shown as a cellular matrix and the changes to the system by individual rule application is also represented as a graphical grid display in Matlab.
 
 ### Outcomes
     1. The body/system/universe heals successfully or fights off the disease/infection and no pathogen is left in the system. The WBC and RBC attain maximum levels flooding the universe and then attain an equilibrium of death and regeneration.
